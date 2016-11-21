@@ -26,7 +26,7 @@ backup:
 	docker run --rm --volumes-from $(BCDBDATA) -v $(PWD):/backup debian:wheezy bash -c "tar zcvf /backup/$(BCDBDATA).tgz data"
 
 restore:
-	docker run --rm --volumes-from $(BCDBDATA) -v $(PWD):/backup debian:wheezy bash -c "tar zxvf backup/$(BCDBDATA).tgz"
+	docker run --rm --volumes-from $(BCDBDATA) -v $(PWD):/backup debian:wheezy bash -c "tar zxvf /backup/$(BCDBDATA).tgz"
 
 rmnetwork:
 	docker network rm icec
