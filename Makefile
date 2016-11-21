@@ -32,7 +32,7 @@ rmnetwork:
 	docker network rm icec
 
 help:
-	docker run -i $(NAME):$(VERSION) help
+	docker run -i $(NAME)/$(NAME):$(VERSION) help
 
 init:
 	docker run --rm --volumes-from=$(BCDBDATA) -ti $(NAME)/$(NAME) -y  configure
